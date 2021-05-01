@@ -1,0 +1,7 @@
+[build]
+  base    = "."
+  publish = "public/"
+  command = "npm install"
+[context.production]
+  publish = "/"
+  command = "node index.js"
