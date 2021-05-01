@@ -1,0 +1,167 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <style>
+    body {
+      padding-top: 50px;
+      padding-bottom: 20px;
+    }
+  </style>
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="css/bootstrap-toggle.min.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Machine à Laver</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container machines">
+      <h3>Machine 1</h3>
+      <p>Status: <input type="checkbox" checked data-toggle="toggle" data-on="Free" data-off="Busy"
+          data-onstyle="success" data-offstyle="danger" disabled id="toggle-one"></p>
+      <!-- <p>Last User: <b id="lastUser">LastUserName</b> <br> <b id="lastDate"></b></p> -->
+      <p>Utilisateur actuel/dernier utilisateur :: <b id="currentUser1"></b></p>
+      <p id="timeleft1">Temps restant: <b id="counter_one"></b></p>
+      <!-- <p><a class="btn btn-primary btn-lg" href="javascript:void(0)" role="button" id="reset">Reset</a></p> -->
+      <div id="showTime_1">
+      <input type="range" min="1" max="300" value="60" class="slider" id="timeSelector_one">
+        <p id="timetoShow_one"></p>
+        <p><a class="btn btn-success btn-lg" href="javascript:void(0)" role="button" id="gobtn_one">Démarrer</a></p>
+        <div class="alert alert-warning" role="alert" style="display:none" id="showAlert_one">
+          Hey, il y a un problème pour obtenir votre nom d'utilisateur, veuillez recharger le site.
+        </div>
+      </div>
+      <p id="cancel_1" style="display:none"><a class="btn btn-danger btn-lg" href="javascript:void(0)" role="button" id="cancelbtn_one">Annuler</a></p>
+    </div>
+    <div class="container machines">
+      <h3>Machine 2</h3>
+      <p>Status: <input type="checkbox" checked data-toggle="toggle" data-on="Free" data-off="Busy"
+          data-onstyle="success" data-offstyle="danger" disabled id="toggle-two"></p>
+      <!-- <p>Last User: <b id="lastUser">LastUserName</b> <br> <b id="lastDate"></b></p> -->
+      <p>Utilisateur actuel/dernier utilisateur :: <b id="currentUser2"></b></p>
+      <p id="timeleft2">Temps restant: <b id="counter_two"></b></p>
+      <!-- <p><a class="btn btn-primary btn-lg" href="javascript:void(0)" role="button" id="reset">Reset</a></p> -->
+      <div id="showTime_2">
+      <input type="range" min="1" max="300" value="60" class="slider" id="timeSelector_two">
+        <p id="timetoShow_two"></p>
+        <p><a class="btn btn-success btn-lg" href="javascript:void(0)" role="button" id="gobtn_two">Démarrer</a></p>
+        <div class="alert alert-warning" role="alert" style="display:none" id="showAlert_two">
+          Hey, il y a un problème pour obtenir votre nom d'utilisateur, veuillez recharger le site.
+        </div>
+      </div>
+      <p id="cancel_2" style="display:none"><a class="btn btn-danger btn-lg" href="javascript:void(0)" role="button" id="cancelbtn_two">Annuler</a></p>
+    </div>
+    <div class="container machines">
+      <h3>Machine 3</h3>
+      <p>Status: <input type="checkbox" checked data-toggle="toggle" data-on="Free" data-off="Busy"
+          data-onstyle="success" data-offstyle="danger" disabled id="toggle-three"></p>
+      <!-- <p>Last User: <b id="lastUser">LastUserName</b> <br> <b id="lastDate"></b></p> -->
+      <p>Utilisateur actuel/dernier utilisateur :: <b id="currentUser3"></b></p>
+      <p id="timeleft3">Temps restant: <b id="counter_three"></b></p>
+      <!-- <p><a class="btn btn-primary btn-lg" href="javascript:void(0)" role="button" id="reset">Reset</a></p> -->
+      <div id="showTime_3">
+      <input type="range" min="1" max="300" value="60" class="slider" id="timeSelector_three">
+        <p id="timetoShow_three"></p>
+        <p><a class="btn btn-success btn-lg" href="javascript:void(0)" role="button" id="gobtn_three">Démarrer</a></p>
+        <div class="alert alert-warning" role="alert" style="display:none" id="showAlert_three">
+          Hey, il y a un problème pour obtenir votre nom d'utilisateur, veuillez recharger le site.
+        </div>
+      </div>
+      <p id="cancel_3" style="display:none"><a class="btn btn-danger btn-lg" href="javascript:void(0)" role="button" id="cancelbtn_three">Annuler</a></p>
+    </div>
+  </div>
+  <div class="container">
+    <p>Avez-vous des questions ou des suggestions ?</p>
+    <p><a class="btn btn-primary btn-lg"
+        href="https://wa.me/33766888303?text=I'm%20interested%20in%20your%20website%20dude" role="button">Ask the
+        dude... &raquo;</a></p>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="modalName" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Hello There</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Il s'agit d'un site web simple permettez de vérifier si la machine à laver est libre. Vous n'aurez pas besoin de vous promener avec vos vêtements ou de demander dans le groupe whatsapp si tout le monde utilise ce site.</p>
+          <p>Instructions :</p>
+          <ol>
+            <li>Entrez votre nom à la fin de ce texte et cliquez sur ok.</li>
+            <li>Permettre au site web de vous envoyer des notifications</li>
+            <li>Si la machine à laver est libre, vous pourrez programmer une alarme, afin de pouvoir récupérer vos vêtements à temps.</li>
+            <li>Si le lave-linge est occupé, vous pourrez voir qui l'utilise et combien de temps il reste.</li>
+            <li>Une fois que vous avez terminé avec vos vêtements, n'oubliez pas de basculer le bouton sur Libre.</li>
+          </ol>
+          <div class="form-group">
+            <form>
+              <label for="usr">Name:</label>
+              <input type="text" class="form-control" id="usr" pattern="[a-zA-Z]" title="This field is required"
+                name="username">
+              <input type="submit" value="OK" hidden>
+            </form>
+          </div>
+          <p>Merci</p>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="okBtn">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- toasT -->
+  <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center"
+    style="min-height: 200px;">
+    <div role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-autohide="true" id="showToast">
+      <div class="toast-header">
+        <img src="tile.png" class="rounded mr-2" alt="washing machine" width="32" height="32">
+        <strong class="mr-auto">Hey ! You! </strong>
+        <small>Just now</small>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="toast-body">
+        Hello, <span id="insertuser">Username</span> Bienvenue
+      </div>
+    </div>d
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/vendor/bootstrap-toggle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/client.js"></script>
+  <footer class="text-muted py-5">
+    <p class="mb-1">Développé par <a href="https://patricio.netlify.app/" target="_blank">Patricio DI BACCO</a></p>
+  </footer>
+</body>
+
+</html>
