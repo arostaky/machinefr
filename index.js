@@ -12,12 +12,12 @@ app.use(bodyParser.json()); // for parsing application/json
 var qs = require('querystring');
 var that = this;
 //web-push
-const webpush = require('web-push');
-const publicVapidKey = process.env.PUBLIC_VAPID_KEY;
-const privateVapidKey = process.env.PRIVATE_VAPID_KEY;
+// const webpush = require('web-push');
+// const publicVapidKey = process.env.PUBLIC_VAPID_KEY;
+// const privateVapidKey = process.env.PRIVATE_VAPID_KEY;
 var pushSubscriptionTest; //your subscription object
 // This is the same output of calling JSON.stringify on a PushSubscription
-webpush.setVapidDetails('mailto:patricio.dibacco@acrovia.net', publicVapidKey, privateVapidKey);
+// webpush.setVapidDetails('mailto:patricio.dibacco@acrovia.net', publicVapidKey, privateVapidKey);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -44,18 +44,18 @@ function clearCounter(what) {
 }
 var settimerFunction;
 //web-push:
-app.post('/subscribe', (req, res) => {
-  const subscription = req.body;
-  pushSubscriptionTest = req.body;
-  res.status(201).json({});
-  const payload = JSON.stringify({ title: 'Washing Machine' });
+// app.post('/subscribe', (req, res) => {
+//   const subscription = req.body;
+//   pushSubscriptionTest = req.body;
+//   res.status(201).json({});
+//   const payload = JSON.stringify({ title: 'Washing Machine' });
 
-  console.log(subscription);
+//   console.log(subscription);
 
-  webpush.sendNotification(subscription, payload).catch(error => {
-    console.error(error.stack);
-  });
-});
+//   webpush.sendNotification(subscription, payload).catch(error => {
+//     console.error(error.stack);
+//   });
+// });
 // save username:
 var userName;
 app.post('/user', function (req, res) {
@@ -92,11 +92,11 @@ app.post('/time1', function (req, res) {
       console.log('countdownOne: ', countdownOne);
       if (countdownOne == 0) {
         console.log('countdownOne is 0');
-        console.log('suscription is:', pushSubscriptionTest);
-        webpush.sendNotification(pushSubscriptionTest, JSON.stringify({ title: '1 !!!' }));
+        // console.log('suscription is:', pushSubscriptionTest);
+        // webpush.sendNotification(pushSubscriptionTest, JSON.stringify({ title: '1 !!!' }));
         clearCounter(this);
         statusOne = true;
-        io.sockets.emit('status', { status: statusOne });
+        io.sockets.emit('status1', { status: statusOne });
       }
     }
   }, 1000);
@@ -123,11 +123,11 @@ app.post('/time2', function (req, res) {
       console.log('countdownTwo: ', countdownTwo);
       if (countdownTwo == 0) {
         console.log('countdownTwo is 0');
-        console.log('suscription is:', pushSubscriptionTest);
-        webpush.sendNotification(pushSubscriptionTest, JSON.stringify({ title: '2 !!!' }));
+        // console.log('suscription is:', pushSubscriptionTest);
+        // webpush.sendNotification(pushSubscriptionTest, JSON.stringify({ title: '2 !!!' }));
         clearCounter(this);
         statusTwo = true;
-        io.sockets.emit('status', { status: statusTwo });
+        io.sockets.emit('status2', { status: statusTwo });
       }
     }
   }, 1000);
@@ -154,11 +154,11 @@ app.post('/time3', function (req, res) {
       console.log('countdownThree: ', countdownThree);
       if (countdownThree == 0) {
         console.log('countdownOne is 0');
-        console.log('suscription is:', pushSubscriptionTest);
-        webpush.sendNotification(pushSubscriptionTest, JSON.stringify({ title: '1 !!!' }));
+        // console.log('suscription is:', pushSubscriptionTest);
+        // webpush.sendNotification(pushSubscriptionTest, JSON.stringify({ title: '1 !!!' }));
         clearCounter(this);
         statusThree = true;
-        io.sockets.emit('status', { status: statusThree });
+        io.sockets.emit('status3', { status: statusThree });
       }
     }
   }, 1000);
